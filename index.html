@@ -149,8 +149,8 @@ const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&a
 const pesos = v => '$' + Math.round(v || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 const DIAS = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
 const MESES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
-const guardar = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
-const leerLS = k => { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } };
+const guardar = (k, v) => { try { localStorage.setItem('nacar_' + k, JSON.stringify(v)); } catch (e) {} };
+const leerLS = k => { try { return JSON.parse(localStorage.getItem('nacar_' + k)); } catch (e) { return null; } };
 
 let D = null;               // datos del negocio
 const R = { servicios: [], cat: null, profesional: null, fecha: null, hora: null, horaCon: '' };
